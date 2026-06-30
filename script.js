@@ -52,21 +52,23 @@
         return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
     }
 
-    // ===== LOAD DATA =====
+    // ===== LOAD DATA FROM data.json (مع تجاوز الكاش) =====
     async function loadData() {
         try {
             showToast('info', '📥 جاري تحميل البيانات...');
             
-            const response = await fetch('data.json');
+            // ✅ إضافة رقم عشوائي لتجاوز الكاش
+            const response = await fetch('data.json?t=' + Date.now());
+            
             if (!response.ok) {
-                throw new Error('data.json غير موجود');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             
             const jsonData = await response.json();
             
             if (jsonData && jsonData.cartoons && Array.isArray(jsonData.cartoons)) {
                 data = jsonData;
-                console.log('✅ تم تحميل البيانات:', data);
+                console.log('✅ تم تحميل البيانات بنجاح:', data);
                 showToast('success', '✅ تم تحميل البيانات بنجاح');
                 return;
             }
@@ -74,52 +76,25 @@
             throw new Error('تنسيق البيانات غير صحيح');
             
         } catch (error) {
-            console.warn('⚠️ استخدام البيانات الافتراضية:', error.message);
+            console.error('❌ خطأ في تحميل البيانات:', error);
+            showToast('error', '❌ فشل تحميل البيانات');
             
-            // ===== بيانات افتراضية (في حال عدم وجود data.json) =====
+            // بيانات افتراضية في حال عدم وجود الملف
             data = {
                 cartoons: [
                     {
-                        name: "ون بيس",
-                        emoji: "🏴‍☠️",
-                        description: "مغامرات قراصنة قبعة القش في البحث عن الكنز الأسطوري",
+                        name: 'ون بيس',
+                        emoji: '🏴‍☠️',
+                        description: 'مغامرات قراصنة قبعة القش',
                         seasons: [
                             {
                                 number: 1,
-                                description: "موسم الشرق الأزرق",
+                                description: 'موسم الشرق الأزرق',
                                 episodes: [
                                     {
                                         number: 1,
-                                        title: "أنا لوفي، سأصبح ملك القراصنة!",
-                                        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                    },
-                                    {
-                                        number: 2,
-                                        title: "ظهور زورو، صياد القراصنة",
-                                        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                                    }
-                                ]
-                            },
-                            {
-                                number: 2,
-                                description: "موسم الأراباستا",
-                                episodes: []
-                            }
-                        ]
-                    },
-                    {
-                        name: "ناروتو",
-                        emoji: "🍥",
-                        description: "قصة نينجا شاب يسعى ليصبح هوكاجي القرية المخفية",
-                        seasons: [
-                            {
-                                number: 1,
-                                description: "موسم القرية المخفية",
-                                episodes: [
-                                    {
-                                        number: 1,
-                                        title: "أنا ناروتو أوزوماكي!",
-                                        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                        title: 'أنا لوفي، سأصبح ملك القراصنة!',
+                                        youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
                                     }
                                 ]
                             }
@@ -127,7 +102,6 @@
                     }
                 ]
             };
-            
             showToast('info', '📝 يتم عرض بيانات افتراضية');
         }
     }
@@ -295,6 +269,7 @@
         applyFilters();
         console.log('🎬 ديف كرتون - النظام جاهز!');
         console.log('📊 عدد الكرتونات:', data.cartoons.length);
+        console.log('💡 لتعديل المحتوى، قم بتعديل ملف data.json');
     });
 
 })();
