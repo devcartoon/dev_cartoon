@@ -1,29 +1,29 @@
 {
   "cartoons": [
     {
-      "name": "ون بيس",
-      "emoji": "🏴‍☠️",
-      "description": "مغامرات قراصنة قبعة القش في البحث عن الكنز الأسطوري",
+      "name": "غامبول",
+      "emoji": "🌀",
+      "description": "كرتون عائلي",
       "seasons": [
         {
           "number": 1,
-          "description": "موسم الشرق الأزرق",
+          "description": "موسم الأول",
           "episodes": [
             {
               "number": 1,
-              "title": "أنا لوفي، سأصبح ملك القراصنة!",
-              "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              "title": "",
+              "youtubeUrl": "https://youtu.be/s0DkZPr0d_4?si=FK-2rTefMoYRdqYj"
             },
             {
               "number": 2,
-              "title": "ظهور زورو، صياد القراصنة",
-              "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              "title": "",
+              "youtubeUrl": "https://youtu.be/O1ckMWjn1R8?si=Hu0BDaQP6DZeEYuW"
             }
           ]
         },
         {
           "number": 2,
-          "description": "موسم الأراباستا",
+          "description": "قريباً",
           "episodes": []
         }
       ]
@@ -57,13 +57,13 @@
           "episodes": [
             {
               "number": 1,
-              "title": "الحلقة 1",
+              "title": "",
               "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
             },
             {
               "number": 2,
-              "title": "حلقة 2",
-              "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
+              "title": "",
+              "youtubeUrl": "ضيف رابط"
             }
           ]
         }
