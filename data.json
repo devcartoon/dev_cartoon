@@ -50,29 +50,24 @@
       "name": "كلارنس",
       "emoji": "🧪",
       "description": "مغامرات",
-      "seasons": [1]
-    }
-  ]
-}
-       "number": 1,
+      "seasons": [
+        {
+          "number": 1,
           "description": "موسم الاول",
           "episodes": [
             {
-                   "number": 1,
+              "number": 1,
               "title": "الحلقة 1",
               "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-    "number": 2,
+            },
+            {
+              "number": 2,
               "title": "حلقة 2",
               "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
             }
           ]
         }
       ]
-    },
-    {
+    }
+  ]
+}
