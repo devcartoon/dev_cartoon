@@ -47,10 +47,32 @@
       ]
     },
     {
-      "name": "اختبار",
+      "name": "كلارنس",
       "emoji": "🧪",
-      "description": "كرتون للاختبار",
-      "seasons": []
+      "description": "مغامرات",
+      "seasons": [1]
     }
   ]
 }
+       "number": 1,
+          "description": "موسم الاول",
+          "episodes": [
+            {
+                   "number": 1,
+              "title": "الحلقة 1",
+              "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+    "number": 2,
+              "title": "حلقة 2",
+              "youtubeUrl": "https://youtu.be/NwkqzTl3ArI?si=YLqNJJSAMfh7Qjqs"
+            }
+          ]
+        }
+      ]
+    },
+    {
